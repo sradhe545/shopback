@@ -1,6 +1,7 @@
 const express= require('express')
 const cors=require("cors")
 const productRoute = require('./route/product.routes')
+const bookmarkRoute=require('./route/bookmark.route')
 const dotenv=require('dotenv').config()
 const mongoose = require('mongoose')
 const app=express()
@@ -11,7 +12,7 @@ mongoose.connect(process.env.MONGO_URL||8080).then(()=>console.log('Connected'))
 
 app.use("/product",productRoute)
 
-
+app.use("/bookmark",bookmarkRoute)
 
 
 
